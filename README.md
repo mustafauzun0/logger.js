@@ -10,7 +10,7 @@ logger.js
 <script>
 
 	var logger = new Logger();
-	document.body.appendChild( logger.domElement );
+	document.body.appendChild( logger.logElement );
 
 	logger.log( 'foo' );
 

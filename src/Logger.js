@@ -4,23 +4,23 @@
 
 var Logger = function () {
 
-	this.domElement = document.createElement( 'div' );
-	this.domElement.style.fontFamily = 'Helvetica, Arial, sans-serif';
-	this.domElement.style.textAlign = 'left';
-	this.domElement.style.fontSize = '10px';
-	this.domElement.style.padding = '2px 0px 3px 0px';
+	this.logElement = document.createElement( 'div' );
+	this.logElement.style.fontFamily = 'Helvetica, Arial, sans-serif';
+	this.logElement.style.textAlign = 'left';
+	this.logElement.style.fontSize = '10px';
+	this.logElement.style.padding = '2px 0px 3px 0px';
 
 	this.log = function ( msg, expand ) {
 
-		this.domElement.appendChild( document.createTextNode( msg ) );
-		this.domElement.appendChild( document.createElement( 'br' ) );
+		this.logElement.appendChild( document.createTextNode( msg ) );
+		this.logElement.appendChild( document.createElement( 'br' ) );
 
 		if ( expand && msg instanceof Object ) {
 
 			for ( var param in msg ) {
 
-				this.domElement.appendChild( document.createTextNode( `- ${ param }: ${ msg[ param ] }`) );
-				this.domElement.appendChild( document.createElement( 'br' ) );
+				this.logElement.appendChild( document.createTextNode( `- ${ param }: ${ msg[ param ] }`) );
+				this.logElement.appendChild( document.createElement( 'br' ) );
 
 			}
 
@@ -30,9 +30,9 @@ var Logger = function () {
 
 	this.clear = function () {
 
-		while ( this.domElement.childNodes.length ) {
+		while ( this.logElement.childNodes.length ) {
 
-			this.domElement.removeChild( this.domElement.firstChild );
+			this.logElement.removeChild( this.logElement.firstChild );
 
 		}
 
