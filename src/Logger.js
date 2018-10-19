@@ -19,7 +19,7 @@ var Logger = function () {
 
 			for ( var param in msg ) {
 
-				this.domElement.appendChild( document.createTextNode( '- ' + param + ': ' + msg[ param ] ) );
+				this.domElement.appendChild( document.createTextNode( `- ${ param }: ${ msg[ param ] }`) );
 				this.domElement.appendChild( document.createElement( 'br' ) );
 
 			}
@@ -30,9 +30,9 @@ var Logger = function () {
 
 	this.clear = function () {
 
-		while ( this.domElement.childNodes.length > 0 ) {
+		while ( this.domElement.childNodes.length ) {
 
-			this.domElement.removeChild( this.domElement.childNodes[ 0 ] );
+			this.domElement.removeChild( this.domElement.firstChild );
 
 		}
 
