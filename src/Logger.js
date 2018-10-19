@@ -19,7 +19,7 @@ var Logger = function () {
 
 			for ( var param in msg ) {
 
-				this.logElement.appendChild( document.createTextNode( `- ${ param }: ${ msg[ param ] }`) );
+				this.logElement.appendChild( document.createTextNode( `- ${ param }: ${ msg[ param ] }` ) );
 				this.logElement.appendChild( document.createElement( 'br' ) );
 
 			}
